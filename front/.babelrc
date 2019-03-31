@@ -1,0 +1,9 @@
+{
+  "presets": [
+    "env",
+    "react",
+    "stage-2",
+    "es2015"
+  ],
+  "plugins": ["transform-class-properties", "syntax-dynamic-import"]
+}
