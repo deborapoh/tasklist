@@ -8,16 +8,14 @@ class Router extends Component {
 
   async componentWillMount() {
     let routesList = null;
-    if (process.env.NODE_ENV === 'development') {
-      routesList = require('./routesDev').routesDev;
-    } else {
-      routesList = require('./routesProd').routesProd;
-    }
+    routesList = require('./routes').routes;
+
     const NAVIGATIONS = await routesList();
     this.setState({ nav: NAVIGATIONS });
   }
 
   render() {
+
     const { nav } = this.state;
 
     return (
@@ -37,3 +35,4 @@ class Router extends Component {
 }
 
 export default Router;
+
