@@ -8,5 +8,18 @@ class Task(db.Model):
     status = db.Column(db.String(1))
     active = db.Column(db.Boolean)
 
+    def __init__(self, title, description=None, status='P', active=True):
+        self.title = title
+        self.description = description
+        self.status = status
+        self.active = active
+
+    def add(task):
+        db.session.add(task)
+        return db.session.commit()
+ 
+    def update():
+        return db.session.commit()
+
 db.create_all()
 manager.create_api(Task, methods=['POST', 'GET', 'PUT'])
