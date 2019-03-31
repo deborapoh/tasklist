@@ -1,0 +1,34 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #612940;
+  padding: 20px 30px 20px 20px;
+
+  .logo {
+    width: 55%;
+    height: auto;
+  }
+
+  .menu {
+    width: auto;
+    height: 80%;
+  }
+}
+
+.checkbox {
+  border-radius: 50px;
+  height: 30px;
+  width: 30px;
+  margin-right: 15px;
+
+  &.P {
+    border: 2.5px solid #612940;
+  }
+
+  &.C {
+    border: 2.5px solid #D7C9CF;
+    background-color: #D7C9CF;
+    content: url("../assets/doneTask.svg");
+  }
+}

@@ -1,7 +1,15 @@
 import React from 'react';
+import addButton from '../assets/addButton.svg';
+import concludeTaskButton from '../assets/concludeTaskButton.svg';
 
 const Button = ({ type }) => (
-  <div>button</div>
+  <img src={
+    type === 'ADD'
+      ? addButton
+    : type === 'CONCLUDED_TASK'
+      ? concludeTaskButton
+      : null
+  } alt="Add Button" />
 );
 
 export default Button;
