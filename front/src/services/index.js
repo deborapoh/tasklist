@@ -7,9 +7,11 @@ const Task = {
     return response.data.tasks;
   },
 
-  async addTask() {
-    const response = await axios.post(`${ROOT_URL}/add_task`);
-    //return response.data.tasks;
+  async addTask(task) {
+    const response = await axios.post(
+      `${ROOT_URL}/add_task?title=${task.title}&description=${task.description}&active=true&status=${task.status}`
+    );
+    return response;
   },
 
   async updateTask() {

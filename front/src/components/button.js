@@ -6,7 +6,7 @@ const Button = ({ type }) => (
   <img src={
     type === 'ADD'
       ? addButton
-    : type === 'CONCLUDED_TASK'
+    : type === 'CONCLUDE_TASK'
       ? concludeTaskButton
       : null
   } alt="Add Button" />
