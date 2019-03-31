@@ -13,13 +13,15 @@ def get_tasks():
     tasks = []
 
     for task in activeTasks:
-        tasks.append({
-            "id": task.id,
-            "title": task.title,
-            "description": task.description,
-            "status": task.status,
-            "active": task.active
-        })
+        
+        if task.title != None and task.title != '':
+            tasks.append({
+                "id": task.id,
+                "title": task.title,
+                "description": task.description,
+                "status": task.status,
+                "active": task.active
+            })
         
     return jsonify({
         'tasks': tasks
