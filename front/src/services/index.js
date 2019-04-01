@@ -2,6 +2,12 @@ import { ROOT_URL } from '../config';
 import axios from 'axios';
 
 const Task = {
+
+  async getTaskById(taskId) {
+    const response = await axios.get(`${ROOT_URL}/api/${taskId}/tasks`);
+    return response.data;
+  },
+
   async getTasks() {
     const response = await axios.get(`${ROOT_URL}/get_tasks`);
     return response.data.tasks;

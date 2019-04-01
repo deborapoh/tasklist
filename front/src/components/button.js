@@ -5,9 +5,9 @@ import concludeTaskButton from '../assets/concludeTaskButton.svg';
 const Button = ({ type }) => (
   <img src={
     type === 'ADD'
-      ? addButton
+      ? `/${addButton}`
     : type === 'CONCLUDE_TASK'
-      ? concludeTaskButton
+      ? `/${concludeTaskButton}`
       : null
   } alt="Add Button" />
 );

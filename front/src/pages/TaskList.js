@@ -32,15 +32,20 @@ class TaskList extends Component {
         <div className="taskList">
           {
             tasks.length > 0
-            ? tasks.map((task, i) => (
-                <Link className={`task ${task.status}`} key={i} to='teste' style={{ textDecoration: 'none' }} >
+            ? tasks.map((task) => (
+                <Link
+                  className={`task ${task.status}`}
+                  key={task.id}
+                  to={`/${task.id}/edit_task`}
+                  style={{ textDecoration: 'none' }}
+                >
                   <Checkbox status={task.status} />
                   {task.title}
                 </Link>
               ))
             : <div className="noRecords">Nenhuma tarefa encontrada</div>
           }
-          <Link className="btn" to="/edit_task" style={{ textDecoration: 'none' }} >
+          <Link className="btn" to="/add_task" style={{ textDecoration: 'none' }} >
             <Button type="ADD" />
           </Link>
         </div>

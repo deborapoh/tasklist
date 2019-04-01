@@ -57,7 +57,7 @@ class EditTask extends Component {
         <div className="purpleRow">
           <div className="description">Título</div>
           <img
-            src={wasteBin}
+            src={`/${wasteBin}`}
             className="wasteBin"
             onClick={this.openModal}
           />
