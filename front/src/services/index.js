@@ -23,9 +23,9 @@ const Task = {
     return response.data;
   },
 
-  async deleteTask(id) {
-    const response = await axios.put(`${ROOT_URL}/delete_task`);
-    //return response.data.tasks;
+  async deleteTask(taskId) {
+    const response = await axios.put(`${ROOT_URL}/delete_task?id=${taskId}`);
+    return response.data;
   },
 };
 

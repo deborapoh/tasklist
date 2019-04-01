@@ -53,7 +53,10 @@ class EditTask extends Component {
     } else {
       await Task.addTask({ title, description, status, active: true });
     }
+  }
 
+  getShowModal = (showModal) => {
+    this.setState({ showModal });
   }
 
   render() {
@@ -66,22 +69,29 @@ class EditTask extends Component {
       task
     } = this.state;
 
+    const { match } = this.props;
+
     return (
       <div>
 
         {
           showModal
-            ? <DeleteTask />
+            ? <DeleteTask taskId={match.params.taskId} closeModal={ this.getCloseModal } />
             : null
         }
 
         <div className="purpleRow">
           <div className="description">Título</div>
-          <img
-            src={`/${wasteBin}`}
-            className="wasteBin"
-            onClick={this.openModal}
-          />
+          {
+            match.params.taskId
+              ? <img
+                  src={`/${wasteBin}`}
+                  className="wasteBin"
+                  onClick={this.openModal}
+                />
+              : null
+          }
+
         </div>
 
 
