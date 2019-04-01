@@ -20,8 +20,7 @@ Para rodar o projeto localmente, é necessário:
 
 Em back/APIRest/run.py é possível setar a porta onde a api será disponibilizada.
 
-========================================================================================
-
+===========================================================================
 **FRONTEND**
 
 Para rodar o projeto localmente, é necessário:
