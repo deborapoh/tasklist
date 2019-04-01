@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import Header from './components/header';
-import Nav from './components/Nav';
 import Router from './router';
-
 
 class App extends Component {
   state = {
@@ -15,7 +13,6 @@ class App extends Component {
       <div className="App">
         <main>
           <Header />
-          {/* <Nav /> */}
           <Router />
         </main>
       </div>

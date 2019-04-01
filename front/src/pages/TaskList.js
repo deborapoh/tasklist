@@ -17,6 +17,7 @@ class TaskList extends Component {
   }
 
   componentWillMount = async () => {
+    //retorna apenas as tasks ativas
     let { tasks } = this.state;
     tasks = await Task.getTasks();
     this.setState({ tasks });

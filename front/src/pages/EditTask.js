@@ -48,10 +48,13 @@ class EditTask extends Component {
     const { match } = this.props;
     const { title, description, status } = this.state;
 
-    if (match.params.taskId) {
-      await Task.updateTask({ id: match.params.taskId, title, description, status });
-    } else {
-      await Task.addTask({ title, description, status, active: true });
+    //Não deixa salvar sem título
+    if (title !== null && title !== "") {
+      if (match.params.taskId) {
+        await Task.updateTask({ id: match.params.taskId, title, description, status });
+      } else {
+        await Task.addTask({ title, description, status, active: true });
+      }
     }
   }
 
@@ -137,7 +140,7 @@ class EditTask extends Component {
 
           <Link
             className="btn"
-            to="/"
+            to={ title ? "/" : match.params.taskId ? `/${match.params.taskId}/edit_task` : "/add_task" }
             onClick={ this.handleClick }
             style={{ textDecoration: 'none' }}
           >
