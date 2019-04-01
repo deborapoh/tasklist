@@ -65,21 +65,18 @@ class EditTask extends Component {
       showModal,
       title,
       description,
-      status,
-      task
+      status
     } = this.state;
 
     const { match } = this.props;
 
     return (
-      <div>
-
+      <div >
         {
           showModal
             ? <DeleteTask taskId={match.params.taskId} closeModal={ this.getCloseModal } />
             : null
         }
-
         <div className="purpleRow">
           <div className="description">Título</div>
           {
@@ -91,9 +88,7 @@ class EditTask extends Component {
                 />
               : null
           }
-
         </div>
-
 
         <div className="editTask">
           <input
