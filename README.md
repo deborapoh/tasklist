@@ -14,11 +14,13 @@ Para rodar o projeto localmente, é necessário:
 * pip install flask-login
 * pip install psycopg2
 
-2. Em back/APIRest/app/__ _init_ __ .py deve-se configurar a base conforme desejado;
+2. Em /back/APIRest/app/__ _init_ __ .py deve-se configurar a base conforme desejado;
 
 3. Criar uma base com o mesmo nome configurado no item acima;
 
-Em back/APIRest/run.py é possível setar a porta onde a api será disponibilizada.
+Em /back/APIRest/run.py é possível setar a porta onde a api será disponibilizada.
+
+4. Ativar a virtualenv e rodar o comando python run.py no diretório /back/APIRest
 
 ===========================================================================
 **FRONTEND**
@@ -27,4 +29,4 @@ Para rodar o projeto localmente, é necessário:
 
 1. Rodar o comando **yarn** para instalar os pacotes necessários;
 
-2. A partir do diretório front rodar o comando **yarn start**
+2. A partir do diretório /front rodar o comando **yarn start**
