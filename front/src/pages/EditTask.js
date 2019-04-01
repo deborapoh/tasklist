@@ -132,7 +132,7 @@ class EditTask extends Component {
           </div>
 
           <div className="purpleRow">Descrição</div>
-          <input
+          <textarea
             className="edition description"
             type="text"
             name="description"

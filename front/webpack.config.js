@@ -14,8 +14,8 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
 const prodMode = process.env.NODE_ENV === 'production';
 
 const configs = prodMode
-  ? require(`${__dirname}/src/config/configProd`)
-  : require(`${__dirname}/src/config/configDev`);
+  ? require(`/${__dirname}/src/config/configProd`)
+  : require(`/${__dirname}/src/config/configDev`);
 
 const config = {
   entry: [
@@ -95,11 +95,11 @@ const config = {
       background_color: '#ffffff',
       icons: [
         {
-          src: `${__dirname}/src/assets/${configs.LOGO}`,
+          src: `/${__dirname}/src/assets/${configs.LOGO}`,
           sizes: [96, 128, 192, 256, 384, 512], // multiple sizes
         },
         {
-          src: `${__dirname}/src/assets/${configs.LOGO}`,
+          src: `/${__dirname}/src/assets/${configs.LOGO}`,
           size: '1024x1024', // you can also use the specifications pattern
         },
       ],

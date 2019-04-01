@@ -9,7 +9,7 @@ const About = () => (
       <div className="description">About</div>
     </div>
     <div className="edition about">
-      <img src={debora} />
+      <img src={`/${debora}`} />
       <b>Debora de Oliveira</b>
       <b>Desenvolvedora FullStack</b>
       <p>

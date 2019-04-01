@@ -8,10 +8,10 @@ import './style.scss';
 const Header = () => (
   <header>
     <Link to="/" style={{ textDecoration: 'none' }} >
-      <img className="logo" src={logo} alt="Logo" />
+      <img className="logo" src={`/${logo}`} alt="Logo" />
     </Link>
     <Link to="/about" style={{ textDecoration: 'none' }} >
-      <img className="menu" src={menuImg} alt="Menu" />
+      <img className="menu" src={`/${menuImg}`} alt="Menu" />
     </Link>
   </header>
 );
