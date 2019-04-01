@@ -9,14 +9,28 @@ import './style.scss';
 
 class EditTask extends Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       showModal: false,
       title: '',
       description: '',
       status: 'P',
     };
+  }
+
+  componentDidMount = async () => {
+
+    const { match } = this.props;
+
+    if (match.params.taskId) {
+      const task = await Task.getTaskById(match.params.taskId);
+      this.setState({
+        title: task.title,
+        description: task.description || '',
+        status: task.status
+      });
+    }
   }
 
   openModal = () => {
@@ -31,8 +45,15 @@ class EditTask extends Component {
 
   handleClick = async () => {
 
+    const { match } = this.props;
     const { title, description, status } = this.state;
-    await Task.addTask({ title, description, status, active: true });
+
+    if (match.params.taskId) {
+      await Task.updateTask({ id: match.params.taskId, title, description, status });
+    } else {
+      await Task.addTask({ title, description, status, active: true });
+    }
+
   }
 
   render() {
